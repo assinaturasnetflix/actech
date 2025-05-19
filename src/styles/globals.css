@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%; /* Exemplo de cor escura para Shadcn */
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    /* ...outras variáveis do Shadcn que você pode querer customizar */
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --accent: 172 98% 42%; /* Ciano para o accent default do Shadcn */
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --radius: 0.5rem; /* Raio de borda padrão */
+  }
+
+  .dark { /* Se você usar a classe 'dark' para o tema escuro */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    /* ... etc ... */
+  }
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-brand-darkBg text-brand-textPrimary antialiased;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevenir scroll horizontal indesejado */
+  }
+  /* Estilo para scrollbar (opcional, mas contribui para o tema escuro) */
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+  body::-webkit-scrollbar-track {
+    background: #2a2a2a;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: #4f4f4f;
+    border-radius: 10px;
+    border: 2px solid #2a2a2a;
+  }
+}
+
+.impact-title {
+  @apply text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl;
+  /* Adicionar gradientes ou efeitos de sombra aqui se desejar */
+  background-image: linear-gradient(to right, theme('colors.brand.cyan'), theme('colors.brand.purple'), theme('colors.brand.lime'));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-padding {
+  @apply py-16 px-4 sm:px-6 lg:px-8;
+}
